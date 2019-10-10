@@ -130,7 +130,6 @@ select {
 .band-section {
   margin: auto;
   margin-bottom: 3vw;
-  margin-top: 5vh;
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
 }
@@ -165,6 +164,26 @@ select {
    background-size: 100% 2px ; /*Setting the height of the lines, and a 100% width so it fills up its container*/
 }
 
+.band-item a {
+  text-decoration: none;
+  color: #eee;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+
+.band-item a:hover {
+  color: #ffc9a3;
+}
+
+.photo {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-column-start: 1 / span 1;
+  grid-row: 1 / span 2;
+  
 .band-item {
   height: 10vh;
   padding: .2em .2em .2em .2em;
@@ -178,6 +197,7 @@ select {
 .photo {
   grid-column: 1 / span 1;
   grid-row: 1 / 3;
+
   background-image: url('colourlessConcertMid.png');
   background-position: center;
   background-size: cover;
@@ -218,18 +238,76 @@ input {
   margin-top: 2.5vh;
   margin-left: 1vw;
 }
-
-.band-item a {
-  text-decoration: none;
-  color: #eee;
-  -webkit-transition: color 0.3s ease-out;
-  -moz-transition: color 0.3s ease-out;
-  -o-transition: color 0.3s ease-out;
-  transition: color 0.3s ease-out;
+main {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
 }
 
-.band-item a:hover {
-  color: #ffc9a3;
+@media screen and (min-width: 750px) {
+  .photo {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-column-start: 1 / span 1;
+    grid-row: 1 / 3;
+    background-image: url('colourlessConcertMid.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+  
+  }
+  .header-image {
+    display: none;
+  }
+  body {
+    display: grid;
+  }
+  .image-wrapper {
+    display: none;
+    
+    
+  }
+  
+  .image-wrapper > .header-image {
+    display: none;
+   
+  }
+
+  #bar--fourth: {
+  flex: 2 0 10vw; 
 }
+}
+
 /* Band list CSS ends*/
-/* This is a test change*/
+
+
+/* IMAGE */
+@media screen and (max-width:750px) {
+  .image-wrapper {
+    display: block;
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    padding: 0;
+    
+  }
+  .image-wrapper > .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+  }
+
+
+ 
+
+
+.photo {
+  display: none;
+}
+body{
+  display: block;
+}
+}
+
