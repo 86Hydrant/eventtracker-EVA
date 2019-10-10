@@ -1,3 +1,5 @@
+import Pagination from "pagination.js"
+
 var numToString = function (num) {
     if (num < 10) {
         return "0" + num;
@@ -32,7 +34,6 @@ var dateChanger = function (apiDate) {
 var city = '';
 var input = document.getElementById("nameCity");
 
-
 input.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter"
     if (event.keyCode === 13) {
@@ -45,12 +46,16 @@ input.addEventListener("keyup", function (event) {
             .then(function (response) {
                 console.log(response.events);
                 response.events.forEach(function (event) {
+                  objJson = response.events;
+
                     dateChanger(event.start.local);
+
                     html = `
                     <ul class="band-list">
                     <li class="band-item"><a href="${event.url}" target="_blank">${event.name.text}</a><br>
                     <p>${timeString}</p><br></li>
                     </ul>
+
             `
                     document.getElementById("band-section").innerHTML += html;
 
