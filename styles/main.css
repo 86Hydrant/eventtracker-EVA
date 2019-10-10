@@ -139,8 +139,8 @@ select {
   margin-top: 3vw;
   margin-bottom: 3vw;
   display: grid;
-  grid-column-start: 2 / span 1;
-  grid-row-start: 2 / span 1;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
 }
 
 .band-section ul {
@@ -178,19 +178,6 @@ select {
    background-size: 100% 2px ; /*Setting the height of the lines, and a 100% width so it fills up its container*/
 }
 
-.photo {
-  margin: 0;
-  height: 100vh;
-  display: grid;
-  grid-column-start: 1 / span 1;
-  grid-row: 1 / 3;
-  background-image: url('colourlessConcertMid.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
-
 .band-item a {
   text-decoration: none;
   color: #eee;
@@ -203,4 +190,88 @@ select {
 .band-item a:hover {
   color: #ffc9a3;
 }
+
+.photo {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-column-start: 1 / span 1;
+  grid-row: 1 / span 2;
+  background-image: url('colourlessConcertMid.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+main {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+@media screen and (min-width: 750px) {
+  .photo {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-column-start: 1 / span 1;
+    grid-row: 1 / 3;
+    background-image: url('colourlessConcertMid.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+  
+  }
+  .header-image {
+    display: none;
+  }
+  body {
+    display: grid;
+  }
+  .image-wrapper {
+    display: none;
+    
+    
+  }
+  
+  .image-wrapper > .header-image {
+    display: none;
+   
+  }
+
+  #bar--fourth: {
+  flex: 2 0 10vw; 
+}
+}
+
 /* Band list CSS ends*/
+
+/* IMAGE */
+@media screen and (max-width:750px) {
+  .image-wrapper {
+    display: block;
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    padding: 0;
+    
+  }
+  .image-wrapper > .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+  }
+
+
+ 
+
+
+.photo {
+  display: none;
+}
+body{
+  display: block;
+}
+}
+
