@@ -1,4 +1,4 @@
-import Pagination from "pagination.js"
+//import Pagination from "pagination.js"
 
 var numToString = function (num) {
     if (num < 10) {

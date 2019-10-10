@@ -183,7 +183,8 @@ select {
   display: grid;
   grid-column-start: 1 / span 1;
   grid-row: 1 / span 2;
-  
+  }
+
 .band-item {
   height: 10vh;
   padding: .2em .2em .2em .2em;
@@ -207,14 +208,16 @@ select {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  position: absolute;
   margin-right: auto;
   margin-bottom: 1.5vw;
   position: relative;
   width: 100%;
-  top: 80%;
+  top: 0;
   height: 15vh;
   background-color: rgba(0, 0, 0, 0.4);
   line-height: .7;
+  margin-top: -20vh;
 }
 
 input {
@@ -254,8 +257,6 @@ main {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-   
-  
   }
   .header-image {
     display: none;
@@ -265,19 +266,20 @@ main {
   }
   .image-wrapper {
     display: none;
-    
-    
-  }
-  
-  .image-wrapper > .header-image {
-    display: none;
-   
   }
 
+  .image-wrapper > .header-image {
+    display: none;
+  }
+
+
+
   #bar--fourth: {
-  flex: 2 0 10vw; 
+  flex: 2 0 10vw;
 }
 }
+
+
 
 /* Band list CSS ends*/
 
@@ -285,29 +287,43 @@ main {
 /* IMAGE */
 @media screen and (max-width:750px) {
   .image-wrapper {
-    display: block;
+    position: relative;
     width: 100%;
     height: 40vh;
     margin: 0;
     padding: 0;
-    
   }
+
   .image-wrapper > .header-image {
     width: 100%;
     height: 100%;
     object-fit: fill;
-    
   }
 
+.city__box {
+  postion: absolute;
+  top: 0;
+  left: 0;
+}
 
- 
+.band-item {
+  width: 100%;
 
+}
+
+.band-section {
+  width: 100%;
+}
+
+.band-section p {
+  width: 100%;
+  font-size: 1em;
+}
 
 .photo {
   display: none;
 }
-body{
+body {
   display: block;
 }
 }
-
