@@ -311,7 +311,12 @@ main {
 
 }
 
-.band-section {
+.band-list {
+  margin: 0;
+}
+
+.band-section ul {
+  margin: 0;
   width: 100%;
 }
 
