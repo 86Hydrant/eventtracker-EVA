@@ -44,7 +44,7 @@ body {
   line-height: 1.5;
   background-color: #121212;
   display: grid;
-  grid-template: 1fr 70% / 1fr 60%;
+  grid-template: 1fr 65vh / 1fr 60%;
   overflow-x: hidden;
 }
 
@@ -130,10 +130,9 @@ select {
 .band-section {
   margin: auto;
   margin-bottom: 3vw;
-  position: relative;
+  margin-top: 5vh;
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
-  display: flex;
 }
 
 .band-section ul {
@@ -173,11 +172,10 @@ select {
   font-weight: 600;
   color: #eee;
   min-height: 50px;
-  display: inline
+  margin-top: 4vh;
 }
 
 .photo {
-  display: grid;
   grid-column: 1 / span 1;
   grid-row: 1 / 3;
   background-image: url('colourlessConcertMid.png');
@@ -187,8 +185,8 @@ select {
 
 .city__box {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-right: auto;
   margin-bottom: 1.5vw;
   position: relative;
@@ -196,37 +194,29 @@ select {
   top: 80%;
   height: 15vh;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: .7vw;
-  line-height: .5;
-}
-
-#city--line {
-  width: 50%;
-  height: 1.7vh;
-  background-color: #d16d26;
-  border: none;
+  line-height: .7;
 }
 
 input {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.01);
   color: #eee;
+  height: auto;
   border: none;
-  border-bottom: 2px solid #eee;
-  font-size: 30px;
-}
-
-.city__box p, .city__box h1 {
-  color: #eee;
-  display: block;
+  border-bottom: 1vh solid #d16d26;
+  font-size: 3rem;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin-bottom: 2.5vh;
 }
 
 .city__box p {
-  font-size: 25px;
-}
-
-.city__box h1 {
-  font-size: 40px;
-  float: center;
+  color: #eee;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+  font-size: 2rem;
+  overflow: hidden;
+  margin-top: 2.5vh;
+  margin-left: 1vw;
 }
 
 .band-item a {

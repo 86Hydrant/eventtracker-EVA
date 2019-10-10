@@ -14,6 +14,21 @@ var yearChange = function (year) {
     }
 };
 
+var timeString = '';
+
+var dateChanger = function (apiDate) {
+    var date = new Date(apiDate);
+
+    var year = date.getYear();
+    var month = date.getMonth();
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+
+    timeString = numToString(day) + '-' + numToString(month) + '-' +
+        yearChange(year) + ' ' + numToString(hour) + ":" + numToString(minutes);
+}
+
 var city = '';
 var input = document.getElementById("nameCity");
 
@@ -30,16 +45,7 @@ input.addEventListener("keyup", function (event) {
             .then(function (response) {
                 console.log(response.events);
                 response.events.forEach(function (event) {
-                    var date = new Date(event.start.local);
-
-                    var year = date.getYear();
-                    var month = date.getMonth();
-                    var day = date.getDate();
-                    var hour = date.getHours();
-                    var minutes = date.getMinutes();
-
-                    var timeString = numToString(day) + '-' + numToString(month) + '-' +
-                        yearChange(year) + ' ' + numToString(hour) + ":" + numToString(minutes);
+                    dateChanger(event.start.local);
                     html = `
                     <ul class="band-list">
                     <li class="band-item"><a href="${event.url}" target="_blank">${event.name.text}</a><br>
