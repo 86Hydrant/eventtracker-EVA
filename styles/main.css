@@ -43,10 +43,9 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: #121212;
-  width: 100%;
-  height: 100%;
   display: grid;
-  grid-template: 1fr 70% / 1fr 3fr;
+  grid-template: 1fr 65vh / 1fr 60%;
+  overflow-x: hidden;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -90,9 +89,8 @@ select {
 .page__header {
   background: #121212;
   color: white;
-  height: auto;
-  grid-column-start: 2 / span 1;
-  grid-row-start: 1 / span 1;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
 }
 
 .header__bar {
@@ -102,8 +100,6 @@ select {
 
 .page__header-title {
   line-height: .5;
-  display: inline-block;
-  width: 100%;
   font-size: calc(6em + 3vw);
   font-family: 'League Spartan','Segoe UI', Tahoma, sans-serif;
   font-variation-settings: 'wght' 772;
@@ -116,9 +112,6 @@ select {
   align-items: center;
 }
 
-#word--first {
-  line-height: 82%;
-}
 
 #bar--first,
 #bar--fourth
@@ -136,9 +129,7 @@ select {
 
 .band-section {
   margin: auto;
-  margin-top: 3vw;
   margin-bottom: 3vw;
-  display: grid;
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
 }
@@ -151,15 +142,10 @@ select {
   width: 60%;
 }
 
-.band-section ul li {
-  padding: 0.7em 0.5em 0.2em 0.5em;
-  font-weight: 600;
-  color: #eee;
-}
 
 .band-section ul li p {
   font-size: 25px;
-  margin: 0 .2em 2px .2em;
+  margin: 0 .2em .2em .2em;
   font-weight: 400;
   font-style: italic;
   color: #eee;
@@ -197,11 +183,60 @@ select {
   display: grid;
   grid-column-start: 1 / span 1;
   grid-row: 1 / span 2;
+  
+.band-item {
+  height: 10vh;
+  padding: .2em .2em .2em .2em;
+  padding: 0.7em 0.5em 0.2em 0.5em;
+  font-weight: 600;
+  color: #eee;
+  min-height: 50px;
+  margin-top: 4vh;
+}
+
+.photo {
+  grid-column: 1 / span 1;
+  grid-row: 1 / 3;
+
   background-image: url('colourlessConcertMid.png');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+}
 
+.city__box {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: auto;
+  margin-bottom: 1.5vw;
+  position: relative;
+  width: 100%;
+  top: 80%;
+  height: 15vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  line-height: .7;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0.01);
+  color: #eee;
+  height: auto;
+  border: none;
+  border-bottom: 1vh solid #d16d26;
+  font-size: 3rem;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin-bottom: 2.5vh;
+}
+
+.city__box p {
+  color: #eee;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+  font-size: 2rem;
+  overflow: hidden;
+  margin-top: 2.5vh;
+  margin-left: 1vw;
 }
 main {
   grid-column: 2 / span 1;
@@ -245,6 +280,7 @@ main {
 }
 
 /* Band list CSS ends*/
+
 
 /* IMAGE */
 @media screen and (max-width:750px) {
